@@ -23,6 +23,7 @@ LOCAL_CXX_STL := libstlport
 include $(MOBICORE_PROJECT_PATH)/daemon/Android.mk
 
 MC_INCLUDE_DIR := \
+    $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
     $(COMP_PATH_MobiCore)/inc \
     $(COMP_PATH_MobiCore)/inc/GP \
     $(COMP_PATH_MobiCore)/inc/TlCm \
@@ -36,7 +37,7 @@ GDM_PROVLIB_SHARED_LIBS=libMcClient
 # Include the provisioning lib
 include $(MOBICORE_PROJECT_PATH)/provlib/Android.mk
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_ADDITIONAL_DEPENDENCIES += INSTALLED_KERNEL_HEADERS
 
 MOBICORE_DIR_INC := $(MC_INCLUDE_DIR) $(MOBICORE_PROJECT_PATH)/common/curl/include
 include $(MOBICORE_PROJECT_PATH)/rootpa/Code/Android/app/jni/Android.mk

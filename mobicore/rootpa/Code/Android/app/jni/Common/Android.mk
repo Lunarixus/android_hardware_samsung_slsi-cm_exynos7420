@@ -79,7 +79,7 @@ else
     LOCAL_MODULE    := provisioningagent
 endif
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_ADDITIONAL_DEPENDENCIES += INSTALLED_KERNEL_HEADERS
 
 LOCAL_MODULE_TAGS := eng optional
 

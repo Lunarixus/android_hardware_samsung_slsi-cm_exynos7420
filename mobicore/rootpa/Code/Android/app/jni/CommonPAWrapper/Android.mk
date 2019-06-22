@@ -49,7 +49,7 @@ endif
 
 LOCAL_MULTILIB := both
 
-LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_ADDITIONAL_DEPENDENCIES += INSTALLED_KERNEL_HEADERS
 
 LOCAL_SRC_FILES += commonwrapper.cpp
 LOCAL_SRC_FILES += JniHelpers.cpp
